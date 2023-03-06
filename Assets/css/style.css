@@ -1,7 +1,8 @@
 :root{
   --white-color: #ffffff;
   --gap: 3rem;
-
+  --primary-color: #000;
+  --light-gray-color: #eee;
 }        
 body {
   margin: 0;
@@ -53,9 +54,12 @@ h6{
   background-color: #ffffff; 
   overflow: hidden; 
 }
+a{
+  text-decoration: none;
+}
 
 
-.hotbar a {
+/* .hotbar a {
   float: left; 
   color: rgb(0, 0, 0); 
   text-align: center; 
@@ -103,14 +107,15 @@ h6{
   .sidebar i {
     font-size: 24px;
   }
-  .main-bg { 
+ */  
+ .main-bg { 
     background-image: url("../img/pattern-randomized.svg");
     background-size: cover;
     background-position: center center;
     color: var(--white-color);
   }
   .white-bg{
-    background-color: #ffffff;
+    background: var(--white-color);
   }
 
   .main-content {
@@ -120,4 +125,58 @@ h6{
   }
   .section{
     min-height: 100vh;
+  }
+  .menu{
+    background: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--light-gray-color);
+  }
+  .menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
+  .main-content{
+    display: flex;
+    justify-content: space-around;
+  }
+  .menu ul{
+    list-style: none;
+    display: flex;
+  }
+  .menu h1{
+    font-size: 2.3rem;
+    color: var(--primary-color);
+  }
+  .menu h1 a{
+    color: inherit;
+  }
+  .menu ul li a{
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    position: relative;
+  }
+  .menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: #6590FF;
+    transition: all 300ms ease-in-out;
+    
+  }
+  .menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
   }
